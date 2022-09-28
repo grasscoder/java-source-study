@@ -1,0 +1,6 @@
+com/test/ApplicationServer.class
+com/test/service/UserService.class
+com/test/entity/UserEntity.class
+com/test/controller/UserController.class
+com/test/mapper/UserMapper.class
+com/test/controller/HelloWorld.class
