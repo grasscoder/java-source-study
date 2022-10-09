@@ -2,6 +2,9 @@ package com.test.controller;
 
 import com.test.entity.UserEntity;
 import com.test.service.UserService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +17,7 @@ import java.util.StringJoiner;
 @RequestMapping("/home")
 @ResponseBody
 public class UserController {
-
+    private static final Logger logger= LoggerFactory.getLogger(UserController.class);
     @Autowired
     private UserService userService;
 
@@ -28,8 +31,9 @@ public class UserController {
                      .add(entity.getPassword())
                              .toString();
 
-            System.out.println(sj);
+           logger.info(sj);
         });
+        logger.info("====hello world");
         return "hello world";
     }
 
@@ -42,25 +46,28 @@ public class UserController {
             pages += 1;
         for (int i = 0; i < pages; i++) {
             List<UserEntity> entities = userService.selectPage(i * pageSize, pageSize);
-            System.out.println("第 " + i +" 页");
+            //logger.info("第 " + i +" 页");
+            logger.info("第 " + i +" 页");
             entities.forEach(entity -> {
                 String sj = new StringJoiner("\t|\t")
                         .add(String.valueOf(entity.getId()))
                         .add(entity.getUsername())
                         .add(entity.getPassword())
                         .toString();
-                System.out.println(sj);
+                logger.info(sj);
             });
-            System.out.println("第 " + i +" 页结束");
-            System.out.println();
+            //logger.info("第 " + i +" 页结束");
+            logger.info("第 " + i +" 页结束");
         }
+        //logger.info("select pages");
+        logger.info("select pages");
         return "select pages";
     }
 
     @RequestMapping("/insert")
     public String insert(){
         userService.insert();
-        System.out.println("插入数据....");
+        logger.info("插入数据....");
         return "插入数据";
     }
 

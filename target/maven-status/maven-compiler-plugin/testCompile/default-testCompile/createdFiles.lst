@@ -18,6 +18,7 @@ com/test/TestStatic.class
 com/test/TestLastNodes.class
 com/test/TestFindPeek.class
 com/test/SmallTools.class
+com/test/TestSynchronized.class
 com/test/TestPrintABC.class
 com/test/TestClassLoader.class
 com/test/ProducerTest.class
@@ -29,6 +30,7 @@ com/test/TestActivityUnit.class
 com/test/ConsumerTest.class
 com/test/TestPrintDaemon.class
 com/test/TestSpringBeanFactory.class
+com/test/TestCharInt.class
 com/test/TestSleep.class
 com/test/TestHashMap.class
 com/test/Producer.class
@@ -42,9 +44,11 @@ com/test/TestArrays.class
 com/test/ThreadTest.class
 com/test/TestSortList$1.class
 com/test/Producer01.class
+com/test/TestCountDownLatch.class
 com/test/InterruptTest.class
 com/test/MyThread.class
 com/test/TestDeleteLastN.class
+com/test/TestStream.class
 com/test/Print1.class
 com/test/TestAbsMinvalues.class
 com/test/TestCommonPoints$A.class
