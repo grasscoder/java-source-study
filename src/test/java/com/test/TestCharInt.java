@@ -13,8 +13,9 @@ public class TestCharInt {
         String s = "aab";
         // int ss = longestSubstring(s);
         //System.out.println(ss);
-        int[] arr = {9, 2, 1, 4, 8, 3, 7};
-        System.out.println(Arrays.toString(quickSort(arr, 0, arr.length - 1)));
+        int[] arr = {3,2,1,0,4};
+        //System.out.println(Arrays.toString(quickSort(arr, 0, arr.length - 1)));
+        System.out.println(canJump(arr));
 
 
     }
@@ -83,6 +84,23 @@ public class TestCharInt {
         quickSort(nums, start, i - 1);
         quickSort(nums, i + 1, end);
         return nums;
+    }
+
+    public static boolean canJump(int[] nums) {
+        if(nums == null|| nums.length == 0)
+            return false;
+        if(nums.length == 1)
+            return true;
+
+        int maxValue = 0;
+        for(int i = 0; i < nums.length; i++) {
+            if(maxValue < i)
+                return false;
+            maxValue = maxValue > (i + nums[i]) ? maxValue : (i + nums[i]);
+        }
+        return maxValue >= nums.length - 1;
+        //return canJump(nums, nums.length);
+
     }
 
 }
